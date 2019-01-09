@@ -67,6 +67,29 @@ var user7 = new Employee('Mike', 'Smith', 'mike@yahoo.com', 31)
 
 //Code Here
 
+class Manager {
+  constructor(first_name, last_name, email, age){
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.reports = []
+  }
+
+  makeWidget(){
+    return this.first_name + ' ' + this.last_name + " Widget"
+  }
+
+  hire(newEmp){
+    this.reports.push(newEmp)
+  }
+
+  fire(ind){
+    this.reports.splice(ind, 1)
+   }
+  }
+
+
 
 
 ////////// PROBLEM 3 //////////
