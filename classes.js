@@ -116,6 +116,69 @@ class Manager {
 
 //Code Here
 
+class ProgressiveManager {
+  constructor(first_name, last_name, email, age){
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.reports = [];
+    this.title = 'Not a manager';
+    this.bonus = 0;
+  }
+
+  makeWidget(){
+    return this.first_name + ' ' + this.last_name + " Widget"
+  }
+
+  hire(newEmp){
+    this.reports.push(newEmp)
+    
+    if(this.reports.length === 0){
+      this.title = 'Not a Manager'
+    }
+    else if(this.reports.length >= 1 && this.reports.length <= 3){
+      this.title = 'Barely Manager'
+    }
+    else if(this.reports.length >= 4 && this.reports.length <= 10){
+      this.title = 'Mostly Manager'
+    }
+    else if(this.reports.length >= 11 && this.reports.length <= 50){
+      this.title = 'Manager'
+    }
+    else if(this.reports.length >= 51 && this.reports.length <= 100){
+      this.title = 'Manager Plus'
+    }
+    else if(this.reports.length >= 100){
+      this.title = 'Bestest Manager'
+    }
+
+    return this.reports
+  }
+
+  fire(ind){
+    this.reports.splice(ind, 1)
+    this.bonus += 100
+   }
+  
+ 
+
+
+  
+  
+}
+
+console.log(ProgressiveManager)
+
+
+
+
+
+
+
+
+
+
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
